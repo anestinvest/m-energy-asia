@@ -31,34 +31,34 @@ const values = [
 
 const CoreValues = () => {
   return (
-    <section id="values" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="text-sm font-semibold text-accent uppercase tracking-wider">
+    <section id="values" className="py-24 bg-primary">
+      <div className="container mx-auto px-12">
+        <div className="text-left mb-16 max-w-5xl mx-auto">
+          <div className="mb-4">
+            <span className="text-sm font-semibold text-accent/60 uppercase tracking-widest">
               Our Foundation
             </span>
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-heading text-5xl md:text-6xl font-bold text-accent mb-6 uppercase">
             Core Values
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl">
             The principles that guide our operations and relationships
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {values.map((value, index) => (
             <Card 
               key={index}
-              className="p-6 border-border hover:border-accent/50 transition-all duration-300 group"
+              className="p-8 bg-card/40 border-border/30 hover:border-accent/30 transition-all duration-300 group"
             >
-              <div className="mb-4">
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                  <value.icon className="w-7 h-7 text-accent" />
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-accent/10 flex items-center justify-center group-hover:bg-accent/15 transition-colors border border-accent/20">
+                  <value.icon className="w-8 h-8 text-accent" />
                 </div>
               </div>
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+              <h3 className="font-heading text-xl font-semibold text-accent mb-4 uppercase tracking-wide">
                 {value.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed text-sm">
