@@ -2,8 +2,8 @@ import { Card } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-primary">
-      <div className="container mx-auto px-12">
+    <section id="about" className="py-12 md:py-24 bg-primary">
+      <div className="container mx-auto px-4 md:px-12">
         <div className="max-w-5xl mx-auto">
           <div className="text-left mb-16">
             <div className="mb-4">

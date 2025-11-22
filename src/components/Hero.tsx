@@ -13,15 +13,15 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-12 text-left max-w-7xl">
+      <div className="relative z-10 container mx-auto px-4 md:px-12 text-left max-w-7xl">
         <div className="max-w-3xl">
-          <p className="text-lg md:text-xl text-accent/80 mb-4 uppercase tracking-widest font-light">
+          <p className="text-sm md:text-lg lg:text-xl text-accent/80 mb-4 uppercase tracking-widest font-light">
             Presentation for
           </p>
-          <h1 className="font-heading text-6xl md:text-8xl font-bold text-accent mb-8 tracking-tight uppercase leading-none">
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-8xl font-bold text-accent mb-6 md:mb-8 tracking-tight uppercase leading-none">
             MALAYSIAN<br />OIL & GAS<br />COMPANY
           </h1>
-          <p className="text-xl md:text-2xl text-accent/70 mb-12 font-light tracking-wide">
+          <p className="text-lg md:text-xl lg:text-2xl text-accent/70 mb-12 font-light tracking-wide">
             M Energy Asia Limited
           </p>
         </div>
