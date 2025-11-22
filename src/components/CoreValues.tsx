@@ -31,8 +31,8 @@ const values = [
 
 const CoreValues = () => {
   return (
-    <section id="values" className="py-24 bg-primary">
-      <div className="container mx-auto px-12">
+    <section id="values" className="py-12 md:py-24 bg-primary">
+      <div className="container mx-auto px-4 md:px-12">
         <div className="text-left mb-16 max-w-5xl mx-auto">
           <div className="mb-4">
             <span className="text-sm font-semibold text-accent/60 uppercase tracking-widest">

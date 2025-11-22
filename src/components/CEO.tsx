@@ -3,8 +3,8 @@ import ceoImage from "@/assets/ceo-portrait.jpg";
 
 const CEO = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-12">
+    <section className="py-12 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             {/* CEO Photo */}
