@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Ship, Fuel, Calculator, TrendingUp } from "lucide-react";
 
 const services = [
@@ -42,30 +43,33 @@ const Services = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <Accordion type="single" collapsible className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="p-10 bg-card/40 border-border/30 hover:border-accent/30 transition-all duration-300"
-            >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0">
-                  <div className="w-14 h-14 bg-accent/10 flex items-center justify-center border border-accent/20">
-                    <service.icon className="w-7 h-7 text-accent" />
+            <AccordionItem key={index} value={`item-${index}`} className="border-0">
+              <Card className="bg-card/40 border-border/30 hover:border-accent/30 transition-all duration-300">
+                <AccordionTrigger className="p-10 hover:no-underline [&[data-state=open]>div>svg]:rotate-180">
+                  <div className="flex items-center gap-5 w-full">
+                    <div className="flex-shrink-0">
+                      <div className="w-14 h-14 bg-accent/10 flex items-center justify-center border border-accent/20">
+                        <service.icon className="w-7 h-7 text-accent" />
+                      </div>
+                    </div>
+                    <h3 className="font-heading text-xl font-semibold text-accent uppercase tracking-wide text-left flex-1">
+                      {service.title}
+                    </h3>
                   </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-heading text-xl font-semibold text-accent mb-4 uppercase tracking-wide">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            </Card>
+                </AccordionTrigger>
+                <AccordionContent className="px-10 pb-10 pt-0">
+                  <div className="pl-[76px]">
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+                  </div>
+                </AccordionContent>
+              </Card>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
