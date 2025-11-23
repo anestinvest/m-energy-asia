@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Zap, Users, Target, Leaf } from "lucide-react";
 
 const values = [
@@ -47,26 +48,31 @@ const CoreValues = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <Accordion type="single" collapsible className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {values.map((value, index) => (
-            <Card 
-              key={index}
-              className="p-8 bg-card/40 border-border/30 hover:border-accent/30 transition-all duration-300 group"
-            >
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-accent/10 flex items-center justify-center group-hover:bg-accent/15 transition-colors border border-accent/20">
-                  <value.icon className="w-8 h-8 text-accent" />
-                </div>
-              </div>
-              <h3 className="font-heading text-xl font-semibold text-accent mb-4 uppercase tracking-wide">
-                {value.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                {value.description}
-              </p>
-            </Card>
+            <AccordionItem key={index} value={`item-${index}`} className="border-0">
+              <Card className="bg-card/40 border-border/30 hover:border-accent/30 transition-all duration-300">
+                <AccordionTrigger className="p-8 hover:no-underline [&[data-state=open]>div>svg]:rotate-180">
+                  <div className="flex flex-col items-start w-full">
+                    <div className="mb-4">
+                      <div className="w-16 h-16 bg-accent/10 flex items-center justify-center border border-accent/20">
+                        <value.icon className="w-8 h-8 text-accent" />
+                      </div>
+                    </div>
+                    <h3 className="font-heading text-xl font-semibold text-accent uppercase tracking-wide text-left">
+                      {value.title}
+                    </h3>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-8 pb-8 pt-0">
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {value.description}
+                  </p>
+                </AccordionContent>
+              </Card>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
