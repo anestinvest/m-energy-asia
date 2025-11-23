@@ -53,21 +53,23 @@ const CoreValues = () => {
             <AccordionItem key={index} value={`item-${index}`} className="border-0">
               <Card className="bg-card/40 border-border/30 hover:border-accent/30 transition-all duration-300">
                 <AccordionTrigger className="p-8 hover:no-underline [&[data-state=open]>div>svg]:rotate-180">
-                  <div className="flex flex-col items-start w-full">
-                    <div className="mb-4">
+                  <div className="flex items-center gap-5 w-full">
+                    <div className="flex-shrink-0">
                       <div className="w-16 h-16 bg-accent/10 flex items-center justify-center border border-accent/20">
                         <value.icon className="w-8 h-8 text-accent" />
                       </div>
                     </div>
-                    <h3 className="font-heading text-xl font-semibold text-accent uppercase tracking-wide text-left">
+                    <h3 className="font-heading text-xl font-semibold text-accent uppercase tracking-wide text-left flex-1">
                       {value.title}
                     </h3>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-8 pb-8 pt-0">
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {value.description}
-                  </p>
+                  <div className="pl-[84px]">
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {value.description}
+                    </p>
+                  </div>
                 </AccordionContent>
               </Card>
             </AccordionItem>
