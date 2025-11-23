@@ -53,7 +53,7 @@ const About = () => {
                 </CollapsibleContent>
                 
                 <CollapsibleTrigger className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium">
-                  {isOpen ? "Скрыть" : "Подробнее"}
+                  {isOpen ? "Hide" : "Read More"}
                   <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </CollapsibleTrigger>
               </Collapsible>
