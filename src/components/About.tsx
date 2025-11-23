@@ -1,6 +1,11 @@
 import { Card } from "@/components/ui/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const About = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <section id="about" className="py-12 md:py-24 bg-primary">
       <div className="container mx-auto px-4 md:px-12">
@@ -17,32 +22,41 @@ const About = () => {
           </div>
           
           <Card className="p-10 md:p-14 bg-card/50 border-border/30">
-            <div className="space-y-6 text-muted-foreground leading-relaxed text-base">
-              <p>
+            <div className="text-muted-foreground leading-relaxed text-base">
+              <p className="mb-6">
                 <strong className="text-accent">M Energy Asia Limited</strong> was incorporated in Labuan on December 1st, 2016, 
                 with principal activities in oil and commodities trading, specializing in blending, refinement, 
                 voyage operation, and sale of crude, natural gas, and petroleum products.
               </p>
               
-              <p>
-                We are currently negotiating off-take agreements with various refineries and trading companies 
-                in China, Southeast Asia, and India. Our intention is to buy physical products directly from 
-                traders/producers and sell to customers in Asia, focusing on India and China. Most of our 
-                China buyers are top Fortune 500 companies.
-              </p>
-              
-              <p>
-                As a trading company, we employ an extensive trading desk. The Global Incentives for Trading (GIFT) 
-                programme positions Malaysia as a regional trading hub for oil and gas. Under this programme, 
-                we benefit from incentives offered through the establishment of the Labuan International Commodity 
-                Trading Company (LITC).
-              </p>
-              
-              <p>
-                Using our sector knowledge and global supply base, we source and market commodities to industrial 
-                consumers—such as manufacturers, power companies, and processors of oil. We procure and market 
-                resources that play an essential role in modern oil and gas business.
-              </p>
+              <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+                <CollapsibleContent className="space-y-6 mb-6">
+                  <p>
+                    We are currently negotiating off-take agreements with various refineries and trading companies 
+                    in China, Southeast Asia, and India. Our intention is to buy physical products directly from 
+                    traders/producers and sell to customers in Asia, focusing on India and China. Most of our 
+                    China buyers are top Fortune 500 companies.
+                  </p>
+                  
+                  <p>
+                    As a trading company, we employ an extensive trading desk. The Global Incentives for Trading (GIFT) 
+                    programme positions Malaysia as a regional trading hub for oil and gas. Under this programme, 
+                    we benefit from incentives offered through the establishment of the Labuan International Commodity 
+                    Trading Company (LITC).
+                  </p>
+                  
+                  <p>
+                    Using our sector knowledge and global supply base, we source and market commodities to industrial 
+                    consumers—such as manufacturers, power companies, and processors of oil. We procure and market 
+                    resources that play an essential role in modern oil and gas business.
+                  </p>
+                </CollapsibleContent>
+                
+                <CollapsibleTrigger className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium">
+                  {isOpen ? "Скрыть" : "Подробнее"}
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                </CollapsibleTrigger>
+              </Collapsible>
             </div>
             
             <div className="mt-12 pt-10 border-t border-border/30">
