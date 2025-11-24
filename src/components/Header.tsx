@@ -8,9 +8,10 @@ const Header = () => {
 
   const navLinks = [
     { href: "#about", label: "About" },
+    { href: "#commercial-offer", label: "Commercial Offer" },
     { href: "#services", label: "Services" },
+    { href: "#banking", label: "Banking Infrastructure" },
     { href: "#values", label: "Core Values" },
-    { href: "#industry", label: "Industry" },
   ];
 
   const handleLinkClick = () => {

@@ -50,7 +50,7 @@ const CommercialOffer = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 px-4 bg-gradient-to-b from-background via-accent/5 to-background">
+    <section id="commercial-offer" className="py-20 md:py-32 px-4 bg-gradient-to-b from-background via-accent/5 to-background">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
