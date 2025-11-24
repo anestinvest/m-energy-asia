@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const About = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,6 +58,98 @@ const About = () => {
                   <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </CollapsibleTrigger>
               </Collapsible>
+
+              <Accordion type="single" collapsible className="mt-8">
+                <AccordionItem value="org-chart" className="border-border/30">
+                  <AccordionTrigger className="text-accent hover:text-accent/80 font-medium">
+                    Organization Chart
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="py-6">
+                      {/* CEO Level */}
+                      <div className="flex flex-col items-center mb-8">
+                        <div className="bg-primary border-2 border-accent px-6 py-3 rounded-lg shadow-lg">
+                          <div className="text-accent font-bold text-center">CEO</div>
+                        </div>
+                        <div className="w-0.5 h-8 bg-border/50"></div>
+                      </div>
+
+                      {/* Department Level */}
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 relative">
+                        <div className="hidden md:block absolute top-0 left-0 right-0 h-0.5 bg-border/50" style={{ top: '-1rem' }}></div>
+                        
+                        <div className="flex flex-col items-center">
+                          <div className="w-0.5 h-4 bg-border/50 md:block hidden"></div>
+                          <div className="bg-card border-2 border-primary px-4 py-3 rounded-lg shadow text-center w-full">
+                            <div className="font-semibold text-sm text-foreground">Compliance Officer</div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                          <div className="w-0.5 h-4 bg-border/50 md:block hidden"></div>
+                          <div className="bg-card border-2 border-primary px-4 py-3 rounded-lg shadow text-center w-full">
+                            <div className="font-semibold text-sm text-foreground">Admin & Finance Department</div>
+                          </div>
+                          <div className="w-0.5 h-6 bg-border/50"></div>
+                          <div className="bg-card/80 border border-border px-3 py-2 rounded text-center text-xs w-full mt-2">
+                            <div className="text-muted-foreground">Finance Manager</div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                          <div className="w-0.5 h-4 bg-border/50 md:block hidden"></div>
+                          <div className="bg-card border-2 border-primary px-4 py-3 rounded-lg shadow text-center w-full">
+                            <div className="font-semibold text-sm text-foreground">Operation Department</div>
+                          </div>
+                          <div className="w-0.5 h-6 bg-border/50"></div>
+                          <div className="grid grid-cols-1 gap-2 w-full mt-2">
+                            <div className="bg-card/80 border border-border px-3 py-2 rounded text-center text-xs">
+                              <div className="text-muted-foreground">Operation Manager</div>
+                            </div>
+                            <div className="bg-card/80 border border-border px-3 py-2 rounded text-center text-xs">
+                              <div className="text-muted-foreground">Logistics Manager</div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                          <div className="w-0.5 h-4 bg-border/50 md:block hidden"></div>
+                          <div className="bg-card border-2 border-primary px-4 py-3 rounded-lg shadow text-center w-full">
+                            <div className="font-semibold text-sm text-foreground">Commercial Department</div>
+                          </div>
+                          <div className="w-0.5 h-6 bg-border/50"></div>
+                          <div className="grid grid-cols-1 gap-2 w-full mt-2">
+                            <div className="bg-card/80 border border-border px-3 py-2 rounded text-center text-xs">
+                              <div className="text-muted-foreground">Trader</div>
+                            </div>
+                            <div className="bg-card/80 border border-border px-3 py-2 rounded text-center text-xs">
+                              <div className="text-muted-foreground">Procurement</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bottom Level Positions */}
+                      <div className="mt-8 pt-6 border-t border-border/30">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                          <div className="bg-muted/30 border border-border/50 px-3 py-2 rounded text-center">
+                            <div className="text-xs text-muted-foreground">Finance Executive</div>
+                          </div>
+                          <div className="bg-muted/30 border border-border/50 px-3 py-2 rounded text-center">
+                            <div className="text-xs text-muted-foreground">Admin Executive</div>
+                          </div>
+                          <div className="bg-muted/30 border border-border/50 px-3 py-2 rounded text-center">
+                            <div className="text-xs text-muted-foreground">Receptionist</div>
+                          </div>
+                          <div className="bg-muted/30 border border-border/50 px-3 py-2 rounded text-center">
+                            <div className="text-xs text-muted-foreground">Office Clerk</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
             
             <div className="mt-12 pt-10 border-t border-border/30">
