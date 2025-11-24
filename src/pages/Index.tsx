@@ -6,7 +6,6 @@ import CommercialOffer from "@/components/CommercialOffer";
 import Services from "@/components/Services";
 import BankingInfrastructure from "@/components/BankingInfrastructure";
 import CoreValues from "@/components/CoreValues";
-import Industry from "@/components/Industry";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -21,7 +20,6 @@ const Index = () => {
         <Services />
         <BankingInfrastructure />
         <CoreValues />
-        <Industry />
         <Footer />
       </div>
     </div>
