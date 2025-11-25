@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-start overflow-hidden">
+    <section className="relative h-screen flex items-start md:items-center justify-start overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -11,15 +11,24 @@ const Hero = () => {
       ></div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-12 text-left max-w-7xl">
+      <div className="relative z-10 container mx-auto px-4 md:px-12 text-left max-w-7xl mt-24 md:mt-0">
         <div className="max-w-3xl">
-          <p className="text-sm md:text-lg lg:text-xl text-accent/80 mb-4 uppercase tracking-widest font-light">
+          <p 
+            className="text-sm md:text-lg lg:text-xl text-accent/80 mb-4 uppercase tracking-widest font-light"
+            style={{ textShadow: '0 2px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.4)' }}
+          >
             Presentation for
           </p>
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-8xl font-bold text-accent mb-6 md:mb-8 tracking-tight uppercase leading-none">
+          <h1 
+            className="font-heading text-4xl md:text-6xl lg:text-8xl font-bold text-accent mb-6 md:mb-8 tracking-tight uppercase leading-none"
+            style={{ textShadow: '0 2px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.4)' }}
+          >
             MALAYSIAN<br />OIL & GAS<br />COMPANY
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-accent/70 mb-12 font-light tracking-wide">
+          <p 
+            className="text-lg md:text-xl lg:text-2xl text-accent/70 mb-12 font-light tracking-wide"
+            style={{ textShadow: '0 2px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.4)' }}
+          >
             M Energy Asia Limited
           </p>
         </div>
