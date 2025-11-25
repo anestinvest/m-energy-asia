@@ -4,13 +4,11 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-start overflow-hidden">
-      {/* Background Image with Heavy Dark Overlay */}
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center grayscale"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-[#2a3d3d]/95"></div>
-      </div>
+      ></div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-12 text-left max-w-7xl">
