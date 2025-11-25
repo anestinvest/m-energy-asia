@@ -1,7 +1,10 @@
 import { Building2 } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BankingInfrastructure = () => {
+  const { t } = useLanguage();
+  
   const localBanks = [
     "APD Bank",
     "RHB Bank",
@@ -24,12 +27,10 @@ const BankingInfrastructure = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-            Banking Infrastructure
+            {t('banking.title')}
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Our extensive banking network enables seamless international transactions and provides robust financial support 
-            for global trading operations. We maintain strategic partnerships with leading financial institutions across 
-            local and international markets, ensuring secure and efficient payment processing for all commodity transactions.
+            {t('banking.subtitle')}
           </p>
         </div>
 
@@ -42,7 +43,7 @@ const BankingInfrastructure = () => {
                   <Building2 className="w-7 h-7 text-accent" />
                 </div>
                 <h3 className="font-heading text-2xl font-semibold text-accent uppercase tracking-wide">
-                  Local Banks
+                  {t('banking.local')}
                 </h3>
               </div>
               <div className="space-y-3">
@@ -68,7 +69,7 @@ const BankingInfrastructure = () => {
                   <Building2 className="w-7 h-7 text-accent" />
                 </div>
                 <h3 className="font-heading text-2xl font-semibold text-accent uppercase tracking-wide">
-                  Foreign Banks
+                  {t('banking.foreign')}
                 </h3>
               </div>
               <div className="space-y-3">

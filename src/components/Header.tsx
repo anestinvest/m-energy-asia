@@ -1,17 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Languages } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'ru' : 'en');
+  };
 
   const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#commercial-offer", label: "Commercial Offer" },
-    { href: "#services", label: "Services" },
-    { href: "#banking", label: "Banking Infrastructure" },
-    { href: "#values", label: "Core Values" },
+    { href: "#about", label: t('header.about') },
+    { href: "#commercial-offer", label: t('header.commercialOffer') },
+    { href: "#services", label: t('header.services') },
+    { href: "#banking", label: t('header.banking') },
+    { href: "#values", label: t('header.values') },
   ];
 
   const handleLinkClick = () => {
@@ -29,7 +35,7 @@ const Header = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -39,8 +45,17 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="text-accent/70 hover:text-accent hover:bg-accent/10"
+            >
+              <Languages className="h-4 w-4 mr-2" />
+              {language === 'en' ? 'RU' : 'EN'}
+            </Button>
             <Button size="sm" className="bg-accent/10 text-accent border border-accent/30 hover:bg-accent/20">
-              Contact Us
+              {t('header.contact')}
             </Button>
           </div>
 
@@ -63,8 +78,19 @@ const Header = () => {
                     {link.label}
                   </a>
                 ))}
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    toggleLanguage();
+                    handleLinkClick();
+                  }}
+                  className="w-full"
+                >
+                  <Languages className="h-4 w-4 mr-2" />
+                  {language === 'en' ? 'Русский' : 'English'}
+                </Button>
                 <Button className="bg-accent/10 text-accent border border-accent/30 hover:bg-accent/20 w-full mt-4">
-                  Contact Us
+                  {t('header.contact')}
                 </Button>
               </div>
             </SheetContent>

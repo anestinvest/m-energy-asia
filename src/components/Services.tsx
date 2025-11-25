@@ -1,45 +1,48 @@
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Ship, Fuel, Calculator, TrendingUp } from "lucide-react";
-
-const services = [
-  {
-    icon: Ship,
-    title: "Vessel Operation",
-    description: "Comprehensive vessel management including voyage instructions, loading/discharging procedures, compliance monitoring, and optimal routing considering geography, meteorology, and canal requirements."
-  },
-  {
-    icon: Fuel,
-    title: "Bunker Management",
-    description: "Expert handling of fuel types, quality measurement, and environmental compliance. Future plans include acquiring storage capacity and blending plants to meet specification needs for China and India markets."
-  },
-  {
-    icon: Calculator,
-    title: "Voyage Estimation",
-    description: "Precise voyage planning including daily operating costs, route calculation, load line optimization, and strategic bunker port selection for maximum cargo efficiency."
-  },
-  {
-    icon: TrendingUp,
-    title: "Trading Services",
-    description: "Long-standing relationships with producers and refiners globally. We deliver crude oil anywhere required, with access to dedicated vessels and worldwide land storage facilities."
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
+  const services = [
+    {
+      icon: Ship,
+      titleKey: 'services.vessel.title',
+      descKey: 'services.vessel.desc'
+    },
+    {
+      icon: Fuel,
+      titleKey: 'services.bunker.title',
+      descKey: 'services.bunker.desc'
+    },
+    {
+      icon: Calculator,
+      titleKey: 'services.voyage.title',
+      descKey: 'services.voyage.desc'
+    },
+    {
+      icon: TrendingUp,
+      titleKey: 'services.trading.title',
+      descKey: 'services.trading.desc'
+    }
+  ];
+
   return (
     <section id="services" className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-12">
         <div className="text-left mb-16 max-w-5xl mx-auto">
           <div className="mb-4">
             <span className="text-sm font-semibold text-accent/60 uppercase tracking-widest">
-              Our Services
+              {t('services.tag')}
             </span>
           </div>
           <h2 className="font-heading text-5xl md:text-6xl font-bold text-accent mb-6 uppercase">
-            Comprehensive Solutions
+            {t('services.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            End-to-end oil and gas trading services backed by industry expertise
+            {t('services.subtitle')}
           </p>
         </div>
         
@@ -55,14 +58,14 @@ const Services = () => {
                       </div>
                     </div>
                     <h3 className="font-heading text-xl font-semibold text-accent uppercase tracking-wide text-left flex-1">
-                      {service.title}
+                      {t(service.titleKey)}
                     </h3>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-10 pb-10 pt-0">
                   <div className="pl-[76px]">
                     <p className="text-muted-foreground leading-relaxed text-sm">
-                      {service.description}
+                      {t(service.descKey)}
                     </p>
                   </div>
                 </AccordionContent>
