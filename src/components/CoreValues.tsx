@@ -1,50 +1,53 @@
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, Zap, Users, Target, Leaf } from "lucide-react";
-
-const values = [
-  {
-    icon: Shield,
-    title: "Safety",
-    description: "Our first priority is protecting the health and well-being of all our people. We take a proactive approach with continuous improvement in preventing occupational diseases and injuries."
-  },
-  {
-    icon: Zap,
-    title: "Entrepreneurialism",
-    description: "We foster the highest level of professionalism, personal ownership and entrepreneurial spirit while never compromising on safety and well-being."
-  },
-  {
-    icon: Users,
-    title: "Openness",
-    description: "We value open relationships and communication based on integrity, cooperation, transparency and mutual benefit with all stakeholders."
-  },
-  {
-    icon: Target,
-    title: "Simplicity",
-    description: "We achieve key deliverables efficiently as a path to industry-leading returns, maintaining focus on excellence, quality, and sustainability."
-  },
-  {
-    icon: Leaf,
-    title: "Responsibility",
-    description: "We recognize our impact on society and the environment. We care profoundly about environmental protection, health, and safety performance."
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CoreValues = () => {
+  const { t } = useLanguage();
+  
+  const values = [
+    {
+      icon: Shield,
+      titleKey: 'values.safety.title',
+      descKey: 'values.safety.desc'
+    },
+    {
+      icon: Zap,
+      titleKey: 'values.entrepreneurialism.title',
+      descKey: 'values.entrepreneurialism.desc'
+    },
+    {
+      icon: Users,
+      titleKey: 'values.openness.title',
+      descKey: 'values.openness.desc'
+    },
+    {
+      icon: Target,
+      titleKey: 'values.simplicity.title',
+      descKey: 'values.simplicity.desc'
+    },
+    {
+      icon: Leaf,
+      titleKey: 'values.responsibility.title',
+      descKey: 'values.responsibility.desc'
+    }
+  ];
+
   return (
     <section id="values" className="py-12 md:py-24 bg-primary">
       <div className="container mx-auto px-4 md:px-12">
         <div className="text-left mb-16 max-w-5xl mx-auto">
           <div className="mb-4">
             <span className="text-sm font-semibold text-accent/60 uppercase tracking-widest">
-              Our Foundation
+              {t('values.tag')}
             </span>
           </div>
           <h2 className="font-heading text-5xl md:text-6xl font-bold text-accent mb-6 uppercase">
-            Core Values
+            {t('values.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            The principles that guide our operations and relationships
+            {t('values.subtitle')}
           </p>
         </div>
         
@@ -60,14 +63,14 @@ const CoreValues = () => {
                       </div>
                     </div>
                     <h3 className="font-heading text-xl font-semibold text-accent uppercase tracking-wide text-left flex-1">
-                      {value.title}
+                      {t(value.titleKey)}
                     </h3>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-8 pb-8 pt-0">
                   <div className="pl-[84px]">
                     <p className="text-muted-foreground leading-relaxed text-sm">
-                      {value.description}
+                      {t(value.descKey)}
                     </p>
                   </div>
                 </AccordionContent>

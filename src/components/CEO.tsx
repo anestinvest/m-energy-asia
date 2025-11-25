@@ -1,7 +1,10 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ceoImage from "@/assets/ceo-portrait.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CEO = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-12">
@@ -22,23 +25,21 @@ const CEO = () => {
             <div className="lg:col-span-3">
               <div className="mb-4">
                 <span className="text-sm font-semibold text-accent/60 uppercase tracking-widest">
-                  Leadership
+                  {t('ceo.tag')}
                 </span>
               </div>
               <h2 className="font-heading text-4xl md:text-5xl font-bold text-accent mb-3 uppercase">
-                Brandon Lim Kim Seng
+                {t('ceo.title')}
               </h2>
-              <p className="text-lg text-accent/70 mb-8 font-medium">Chief Executive Officer</p>
+              <p className="text-lg text-accent/70 mb-8 font-medium">{t('ceo.position')}</p>
               
               <p className="text-muted-foreground leading-relaxed mb-10">
-                Dr. Brandon Lim Kim Seng is a seasoned executive with over 20 years of leadership 
-                experience in energy trading, investment banking, international commodities, and 
-                large-scale development projects across Asia and Africa.
+                {t('ceo.intro')}
               </p>
 
               <div className="mb-6">
                 <h3 className="text-sm font-semibold text-accent/60 uppercase tracking-widest mb-6">
-                  Professional Experience
+                  {t('ceo.experience')}
                 </h3>
               </div>
 
@@ -46,94 +47,61 @@ const CEO = () => {
                 <AccordionItem value="item-1" className="border-border/20 bg-card/30 px-6 rounded-sm">
                   <AccordionTrigger className="text-accent hover:no-underline py-5">
                     <div className="text-left">
-                      <div className="font-semibold text-lg">M Energy Asia Limited</div>
+                      <div className="font-semibold text-lg">{t('ceo.mea.company')}</div>
                       <div className="text-sm text-muted-foreground mt-1">
-                        Chief Executive Officer (CEO) • 2019 – Present
+                        {t('ceo.mea.role')}
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-6 space-y-3">
-                    <p>
-                      Founded M Energy Asia Limited (MEA) in 2019. Within a short period, transformed 
-                      the company into a leading oil trading and brokerage house in Asia by establishing 
-                      a robust supply chain for crude oil originating from China and India.
-                    </p>
-                    <p>
-                      Under Dr. Lim's leadership, MEA has executed over 200 crude oil transactions, 
-                      generating a cumulative turnover exceeding USD 1 billion. Successfully navigated 
-                      the company through the COVID-19 pandemic while maintaining strong growth momentum.
-                    </p>
-                    <p>
-                      Oversees overall corporate strategy, business development, financial performance, 
-                      profit & loss management, and day-to-day operations.
-                    </p>
+                    <p>{t('ceo.mea.desc1')}</p>
+                    <p>{t('ceo.mea.desc2')}</p>
+                    <p>{t('ceo.mea.desc3')}</p>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2" className="border-border/20 bg-card/30 px-6 rounded-sm">
                   <AccordionTrigger className="text-accent hover:no-underline py-5">
                     <div className="text-left">
-                      <div className="font-semibold text-lg">Military Veterans Association of Malaysia</div>
+                      <div className="font-semibold text-lg">{t('ceo.military.company')}</div>
                       <div className="text-sm text-muted-foreground mt-1">
-                        Special Project Advisor • 2016 – 2018
+                        {t('ceo.military.role')}
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-6 space-y-3">
-                    <p>
-                      Designed and implemented public safety enhancement programs focusing on cybersecurity 
-                      and C4ISR communication systems for the Malaysian market.
-                    </p>
-                    <p>
-                      Coordinated multi-year cooperation initiatives with government entities in Malaysia, 
-                      Russia, and Angola. Established a sustainable asset-management program for retired 
-                      military personnel.
-                    </p>
+                    <p>{t('ceo.military.desc1')}</p>
+                    <p>{t('ceo.military.desc2')}</p>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3" className="border-border/20 bg-card/30 px-6 rounded-sm">
                   <AccordionTrigger className="text-accent hover:no-underline py-5">
                     <div className="text-left">
-                      <div className="font-semibold text-lg">Development Bank of Guinea</div>
+                      <div className="font-semibold text-lg">{t('ceo.bank.company')}</div>
                       <div className="text-sm text-muted-foreground mt-1">
-                        CEO / Board Director • 2012 – 2016
+                        {t('ceo.bank.role')}
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-6 space-y-3">
-                    <p>
-                      Represented major shareholders on the Board of Directors. Led the formulation and 
-                      execution of the bank's overall strategy, managed all banking operations, stakeholders, 
-                      and corporate affairs.
-                    </p>
-                    <p>
-                      Secured funding from top-tier institutions in China, Malaysia, Société Générale (France), 
-                      and leading West African banks.
-                    </p>
-                    <p>
-                      During his tenure, spearheaded major energy and agricultural projects, including a 
-                      300 MW heavy-fuel power plant and the development of 50,000 hectares of palm oil 
-                      plantations for local consumption and export in West Africa.
-                    </p>
+                    <p>{t('ceo.bank.desc1')}</p>
+                    <p>{t('ceo.bank.desc2')}</p>
+                    <p>{t('ceo.bank.desc3')}</p>
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-4" className="border-border/20 bg-card/30 px-6 rounded-sm">
                   <AccordionTrigger className="text-accent hover:no-underline py-5">
                     <div className="text-left">
-                      <div className="font-semibold text-lg">BDG Capital Ltd</div>
+                      <div className="font-semibold text-lg">{t('ceo.bdg.company')}</div>
                       <div className="text-sm text-muted-foreground mt-1">
-                        Executive Director • 2010 – 2016
+                        {t('ceo.bdg.role')}
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-6 space-y-3">
-                    <p>
-                      Initiated and managed a gold trading platform involving the procurement of 99.2% 
-                      purity gold bars in Portugal and Dubai, followed by international exchange sales 
-                      and local market distribution.
-                    </p>
+                    <p>{t('ceo.bdg.desc1')}</p>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
